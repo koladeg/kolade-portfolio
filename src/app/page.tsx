@@ -8,7 +8,7 @@ const navLinks = [
 const stats = [
   { label: "Experience", value: "8+ years" },
   { label: "Focus", value: "React Native + AI workflows" },
-  { label: "Domains", value: "Health, logistics, product" },
+  { label: "Strength", value: "Useful product systems" },
 ];
 
 const projects = [
@@ -81,17 +81,15 @@ export default function Home() {
   return (
     <main className="page-shell">
       <section className="hero-shell">
-        <div className="hero-orb hero-orb-left" />
-        <div className="hero-orb hero-orb-right" />
-
-        <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-16 pt-6 sm:px-10 lg:px-12">
+        <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-20 pt-6 sm:px-10 lg:px-12">
           <header className="topbar">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-accent)]">
-                Kolade Gureje
-              </p>
-              <p className="mt-2 text-sm text-[var(--color-text-muted)]">React Native developer • AI-assisted product builder</p>
-            </div>
+            <a href="#top" className="brand-lockup">
+              <span className="brand-mark" aria-hidden="true" />
+              <div>
+                <p className="brand-name">Kolade Gureje</p>
+                <p className="brand-role">Mobile developer</p>
+              </div>
+            </a>
 
             <nav className="nav-links" aria-label="Primary">
               {navLinks.map((link) => (
@@ -102,54 +100,41 @@ export default function Home() {
             </nav>
           </header>
 
-          <div className="hero-grid">
-            <div className="space-y-8">
-              <div className="inline-flex w-fit items-center rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm text-[var(--color-text-muted)] backdrop-blur">
-                Building mobile products with product sense, workflow clarity, and modern AI tools.
-              </div>
+          <div id="top" className="hero-grid">
+            <div className="hero-copy-wrap">
+              <p className="eyebrow">React Native • Product systems • AI-assisted execution</p>
+              <h1 className="hero-title">
+                I build mobile products that stay clear under real-world pressure.
+              </h1>
+              <p className="hero-copy">
+                I am a Nigeria-based developer focused on React Native, product workflow thinking, and practical
+                AI-assisted building. My best work sits where clean user experience meets operational reality.
+              </p>
 
-              <div className="space-y-6">
-                <h1 className="hero-title">
-                  I build thoughtful mobile products that feel clean, useful, and ready for real-world work.
-                </h1>
-                <p className="hero-copy">
-                  I am a Nigeria-based React Native developer focused on mobile experiences across healthcare,
-                  logistics, and AI-assisted product workflows. I care about practical products, clear systems,
-                  and shipping work that people can actually use.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
+              <div className="hero-actions">
                 <a className="button-primary" href="#projects">
                   View Projects
                 </a>
                 <a className="button-secondary" href="mailto:koladegureje@gmail.com">
                   Contact Me
                 </a>
-                <a className="button-secondary" href="https://github.com/koladeg" target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
               </div>
             </div>
 
-            <aside className="hero-panel panel">
-              <div className="space-y-5">
-                <div>
-                  <p className="eyebrow mb-3">Quick snapshot</p>
-                  <p className="text-sm leading-7 text-[var(--color-text-soft)]">
-                    A product-minded mobile developer with strong React Native foundations and growing depth in
-                    AI-assisted delivery.
-                  </p>
-                </div>
+            <aside className="hero-side">
+              <div className="intro-note tone-soft">
+                <p>
+                  I care about useful software, strong workflows, and interfaces that feel calm instead of noisy.
+                </p>
+              </div>
 
-                <div className="grid gap-4">
-                  {stats.map((stat) => (
-                    <div key={stat.label} className="stat-card">
-                      <p className="text-sm text-[var(--color-text-muted)]">{stat.label}</p>
-                      <p className="mt-2 text-lg font-semibold text-[var(--color-text)]">{stat.value}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="stats-block tone-paper">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="stat-row">
+                    <p>{stat.label}</p>
+                    <strong>{stat.value}</strong>
+                  </div>
+                ))}
               </div>
             </aside>
           </div>
@@ -157,115 +142,107 @@ export default function Home() {
       </section>
 
       <section id="projects" className="section-shell section-spacing">
-        <div className="section-header">
-          <p className="eyebrow">Selected work</p>
-          <h2 className="section-title">Proof of work with product context, not just screenshots and links.</h2>
-          <p className="section-copy">
-            The strongest signal I can give is how I think through real workflows, delivery constraints, and
-            user usefulness.
-          </p>
+        <div className="section-heading split-heading">
+          <p className="section-label">Selected work</p>
+          <h2 className="section-title">Work shaped by delivery context, not portfolio filler.</h2>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => (
-            <article key={project.title} className="project-card panel">
-              <div className="space-y-4">
-                <div className="space-y-3">
-                  <p className="project-kicker">{project.category}</p>
-                  <h3 className="text-2xl font-semibold tracking-tight text-[var(--color-text)]">{project.title}</h3>
-                  <p className="text-base leading-7 text-[var(--color-text-soft)]">{project.summary}</p>
-                </div>
-
-                <div className="outcome-box">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">Outcome</p>
-                  <p className="mt-2 text-sm leading-7 text-[var(--color-text-muted)]">{project.outcome}</p>
-                </div>
+        <div className="projects-list" aria-label="Projects">
+          {projects.map((project, index) => (
+            <article key={project.title} className={`project-row ${index % 2 === 1 ? "project-row-reverse" : ""}`}>
+              <div className="project-meta tone-paper">
+                <p className="project-index">0{index + 1}</p>
+                <p className="project-kicker">{project.category}</p>
               </div>
 
-              <div className="flex flex-wrap gap-2">
-                {project.stack.map((item) => (
-                  <span key={item} className="tag">
-                    {item}
-                  </span>
-                ))}
-              </div>
+              <div className="project-content tone-soft">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-summary">{project.summary}</p>
+                <p className="project-outcome">{project.outcome}</p>
 
-              <div className="mt-auto flex flex-wrap gap-3 pt-2">
-                {project.links.map((link) => (
-                  <a key={link.label} className="inline-link" href={link.href} target="_blank" rel="noreferrer">
-                    {link.label}
-                  </a>
-                ))}
+                <div className="tag-row">
+                  {project.stack.map((item) => (
+                    <span key={item} className="tag">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="project-links">
+                  {project.links.map((link) => (
+                    <a key={link.label} className="inline-link" href={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="expertise" className="section-shell section-spacing">
-        <div className="section-header">
-          <p className="eyebrow">Expertise</p>
-          <h2 className="section-title">I bring a product-engineer mindset to mobile delivery.</h2>
-          <p className="section-copy">
-            I like work that sits at the intersection of usability, implementation detail, and operational reality.
-          </p>
+      <section id="expertise" className="section-shell section-spacing expertise-grid">
+        <div className="section-heading">
+          <p className="section-label">Expertise</p>
+          <h2 className="section-title">A product-engineer mindset, tuned for mobile delivery.</h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {expertise.map((item) => (
-            <article key={item.title} className="panel feature-card">
-              <h3 className="text-xl font-semibold text-[var(--color-text)]">{item.title}</h3>
-              <p className="mt-3 text-base leading-7 text-[var(--color-text-soft)]">{item.body}</p>
+        <div className="expertise-stack">
+          {expertise.map((item, index) => (
+            <article key={item.title} className={`expertise-row ${index === 1 ? "tone-paper" : "tone-soft"}`}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="about" className="section-shell section-spacing">
-        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div className="section-header mb-0">
-            <p className="eyebrow">About</p>
-            <h2 className="section-title">I like building products that are calm on the surface and strong underneath.</h2>
+      <section id="about" className="section-shell section-spacing about-grid">
+        <div className="section-heading">
+          <p className="section-label">About</p>
+          <h2 className="section-title">I like products that feel simple because the thinking underneath is strong.</h2>
+        </div>
+
+        <div className="about-layout">
+          <div className="about-copy tone-soft">
+            <p>
+              My foundation is in React Native, but the part of the work I care about most is shaping software
+              around real use: understanding the workflow, reducing friction, and making product decisions that
+              hold up beyond a demo.
+            </p>
+            <p>
+              I have worked across healthcare, logistics, reporting flows, and early-stage product ideas. More
+              recently, I have been leaning into AI-assisted building as a practical way to move from idea to
+              tested implementation faster.
+            </p>
           </div>
 
-          <div className="panel about-panel">
-            <p className="text-base leading-8 text-[var(--color-text-soft)]">
-              My background is strongest in React Native, but what keeps pulling me forward is product thinking:
-              understanding the workflow, reducing friction, and shaping software around how people actually work.
-            </p>
-            <p className="text-base leading-8 text-[var(--color-text-soft)]">
-              I have worked across healthcare, logistics, reporting flows, and early-stage product ideas. Lately,
-              I have also been leaning into AI-assisted building as a practical way to move from idea to tested
-              implementation faster.
-            </p>
-
-            <div className="principles-list">
-              {principles.map((item) => (
-                <div key={item} className="principle-item">
-                  <span className="principle-dot" aria-hidden="true" />
-                  <p className="text-sm leading-7 text-[var(--color-text-soft)]">{item}</p>
-                </div>
-              ))}
-            </div>
+          <div className="principles tone-paper">
+            {principles.map((item) => (
+              <div key={item} className="principle-item">
+                <span className="principle-line" aria-hidden="true" />
+                <p>{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="section-shell pb-24 pt-6">
-        <div className="panel contact-panel">
-          <div className="max-w-2xl space-y-3">
-            <p className="eyebrow">Contact</p>
-            <h2 className="section-title">If you are building something useful, I would love to hear about it.</h2>
-            <p className="text-base leading-7 text-[var(--color-text-soft)]">
-              Best for mobile product roles, React Native work, and practical AI-assisted product development.
-            </p>
+      <section id="contact" className="section-shell section-spacing">
+        <div className="contact-band tone-ink">
+          <div>
+            <p className="section-label section-label-light">Contact</p>
+            <h2 className="contact-title">If you are building something useful, I would love to hear about it.</h2>
           </div>
 
-          <div className="flex flex-wrap gap-3">
-            <a className="button-primary" href="mailto:koladegureje@gmail.com">
+          <div className="contact-actions">
+            <a className="button-light" href="mailto:koladegureje@gmail.com">
               koladegureje@gmail.com
             </a>
-            <a className="button-secondary" href="https://linkedin.com/in/kolade-gureje" target="_blank" rel="noreferrer">
+            <a className="button-light button-light-secondary" href="https://github.com/koladeg" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a className="button-light button-light-secondary" href="https://linkedin.com/in/kolade-gureje" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
           </div>
