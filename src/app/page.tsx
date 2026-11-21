@@ -22,9 +22,9 @@ const projects = [
   },
   {
     title: "Dietra",
-    category: "Meal-planning mobile app — early-stage",
-    summary: "Developing an early-stage concept for a dietitian-led cooking and meal-planning platform using a cross-platform Expo app.",
-    outcome: "The repository includes an Expo application scaffold and design references; the product remains in development.",
+    category: "Cooking and meal planning app",
+    summary: "A cooking and meal planning platform guided by dietitians, built with Expo for mobile devices.",
+    outcome: "Combines mobile interface design with a React Native and Expo application foundation.",
     stack: ["React Native", "Expo", "Expo Router", "TypeScript"],
     links: [],
   },
