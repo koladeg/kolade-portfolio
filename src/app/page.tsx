@@ -7,11 +7,27 @@ const navLinks = [
 
 const stats = [
   { label: "Experience", value: "8+ years" },
-  { label: "Focus", value: "React Native + AI workflows" },
+  { label: "Focus", value: "Mobile + frontend engineering" },
   { label: "Strength", value: "Useful product systems" },
 ];
 
 const projects = [
+  {
+    title: "Orisynx",
+    category: "Audit management platform",
+    summary: "Contributed to a collaborative audit management platform covering audit programmes, findings, corrective actions, and role-specific dashboards.",
+    outcome: "Recent work includes audit workflow refinements, dashboard usability, and demo-booking integration.",
+    stack: ["React", "TypeScript", "GraphQL", "NestJS", "MongoDB", "Playwright"],
+    links: [],
+  },
+  {
+    title: "Dietra",
+    category: "Meal-planning mobile app — early-stage",
+    summary: "Developing an early-stage concept for a dietitian-led cooking and meal-planning platform using a cross-platform Expo app.",
+    outcome: "The repository includes an Expo application scaffold and design references; the product remains in development.",
+    stack: ["React Native", "Expo", "Expo Router", "TypeScript"],
+    links: [],
+  },
   {
     title: "GoTruck",
     category: "Logistics mobile product",
@@ -34,7 +50,7 @@ const projects = [
       "Designed a Duolingo-style learning experience around a real-time AI teacher, live captions, and guided spoken practice.",
     outcome: "Used AI-assisted workflows to shape product flow, prompts, feature tradeoffs, and implementation direction.",
     stack: ["React Native", "Expo", "TypeScript", "Clerk", "Stream", "PostHog", "NativeWind", "Zustand"],
-    links: [{ label: "GitHub", href: "https://github.com/koladeg" }],
+    links: [{ label: "GitHub", href: "https://github.com/koladeg/expo-lingua" }],
   },
   {
     title: "e-mhGAP Replica",
@@ -87,7 +103,7 @@ export default function Home() {
               <span className="brand-mark" aria-hidden="true" />
               <div>
                 <p className="brand-name">Kolade Gureje</p>
-                <p className="brand-role">Mobile developer</p>
+                <p className="brand-role">Mobile & frontend developer</p>
               </div>
             </a>
 
@@ -102,9 +118,9 @@ export default function Home() {
 
           <div id="top" className="hero-grid">
             <div className="hero-copy-wrap">
-              <p className="eyebrow">React Native • Product systems • AI-assisted execution</p>
+              <p className="eyebrow">React Native • React • TypeScript • Product systems</p>
               <h1 className="hero-title">
-                I build mobile products that stay clear under real-world pressure.
+                I build mobile and web experiences for real-world workflows.
               </h1>
               <p className="hero-copy">
                 I am a Nigeria-based developer focused on React Native, product workflow thinking, and practical
